@@ -1,0 +1,28 @@
+{
+  "name": "elo-calculator",
+  "version": "1.0.0",
+  "description": "Elo rating calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint . && mocha",
+    "dev": "mocha --watch",
+    "prepublish": "npm t"
+  },
+  "keywords": [
+    "elo",
+    "calculator",
+    "fide",
+    "rating"
+  ],
+  "author": "Linus Ljung <linus.ljung@outlook.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LinusLjung/elo-rating.git"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.15.0",
+    "mocha": "^3.2.0"
+  }
+}
