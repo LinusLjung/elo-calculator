@@ -16,7 +16,7 @@ npm install elo-calculator
 
 In node.js, require the module:
 ```js
-const Elo = require('elo-rating');
+const Elo = require('elo-calculator');
 ```
 
 First we initialize the Elo calculator, optionally passing options.
