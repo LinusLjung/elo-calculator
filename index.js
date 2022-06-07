@@ -47,12 +47,13 @@ Elo.prototype.getK = function(player) {
   return this.options.k[1];
 };
 
-Elo.prototype.createPlayer = function(rating, gamesPlayed, highestRating) {
+Elo.prototype.createPlayer = function(rating, gamesPlayed, highestRating, name) {
   rating = typeof rating === 'number' ? rating : this.options.rating;
   gamesPlayed = typeof gamesPlayed === 'number' ? gamesPlayed : 0;
   highestRating = typeof highestRating === 'number' && highestRating > rating ? highestRating : rating;
+  name = typeof name === 'string' ? name : '';
 
-  const player = new Elo.Player(rating, gamesPlayed, highestRating);
+  const player = new Elo.Player(rating, gamesPlayed, highestRating, name);
 
   this.players.push(player);
 
@@ -75,10 +76,11 @@ Elo.prototype.updateRatings = function(matches) {
   });
 };
 
-Elo.Player = function(rating, gamesPlayed, highestRating) {
+Elo.Player = function(rating, gamesPlayed, highestRating, name) {
   this.rating = rating;
   this.numberOfGamesPlayed = gamesPlayed;
   this.highestRating = highestRating;
+  this.name = name;
 };
 
 module.exports = Elo;
