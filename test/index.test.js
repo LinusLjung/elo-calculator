@@ -52,6 +52,7 @@ describe('Elo', function() {
       assert.equal(player.rating, Elo.defaultOptions.rating);
       assert.equal(player.numberOfGamesPlayed, 0);
       assert.equal(player.highestRating, player.rating);
+      assert.equal(player.name, '');
     });
 
     it('should create a player with options passed to constructor', function() {
@@ -71,11 +72,12 @@ describe('Elo', function() {
       const rating = Elo.defaultOptions.rating + 1;
       const highestRating = rating + 1;
       const elo = new Elo();
-      const player = elo.createPlayer(rating, 10, highestRating);
+      const player = elo.createPlayer(rating, 10, highestRating, 'John Smith');
 
       assert.equal(player.rating, rating);
       assert.equal(player.numberOfGamesPlayed, 10);
       assert.equal(player.highestRating, highestRating);
+      assert.equal(player.name, 'John Smith');
     });
   });
 
